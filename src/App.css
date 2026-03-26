@@ -1,100 +1,78 @@
-/* ================= 全局样式 / Global Styles ================= */
-body {
-  margin: 0; /* 去掉默认外边距 / Remove default margin */
-  font-family: Arial, sans-serif; /* 设置字体 / Set font */
-}
-
-.container {
-  text-align: center; /* 内容居中 / Center content */
-}
-
-/* ================= 导航栏 / Navigation Bar ================= */
+/* ================= 导航栏 ================= */
 .navbar {
-  display: flex; /* 弹性布局 / Flex layout */
-  justify-content: space-between; /* 两端对齐 / Space between items */
-  padding: 15px 30px; /* 内边距 / Padding */
-  background: #222; /* 背景色 / Background color */
-  color: white; /* 字体颜色 / Text color */
+  display: flex;
+  justify-content: space-between; /* 左右两端对齐 */
+  align-items: center;           /* 垂直居中 */
+  padding: 30px 30px;
+  background: #222;
+  color: white;
 }
 
-/* 导航链接 / Navigation Links */
-.navbar a {
-  margin: 0 10px; /* 左右间距 / Horizontal spacing */
-  color: white; /* 字体颜色 / Text color */
-  text-decoration: none; /* 去掉下划线 / Remove underline */
-  position: relative; /* 为伪元素定位 / For pseudo-element positioning */
-  font-weight: 500; /* 字体粗细 / Font weight */
-
-  transition: all 0.3s ease; /* 动画过渡 / Smooth transition */
+/* 左侧 logo + 名字 */
+.navbar-left {
+  display: flex;
+  align-items: center;
 }
 
-/* 鼠标悬停效果 / Hover Effect */
-.navbar a:hover {
-  color: #4CAF50; /* 变绿色 / Change color */
-  transform: scale(1.1); /* 放大 / Scale up */
+.logo-img {
+  height: 50px;
+  margin-right: 10px;
 }
 
-/* 下划线动画（初始隐藏）/ Underline animation (hidden initially) */
-.navbar a::after {
-  content: ""; /* 伪元素必须写 / Required for pseudo element */
-  position: absolute; /* 绝对定位 / Absolute position */
+.logo-text {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* 右侧导航 + 多语言 */
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-right a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.navbar-right a:hover {
+  color: #4CAF50;
+  transform: scale(1.1);
+}
+
+.navbar-right a::after {
+  content: "";
+  position: absolute;
   left: 0;
-  bottom: -5px; /* 下方位置 / Position below text */
-  width: 0%; /* 初始宽度为0 / Start with 0 width */
-  height: 2px; /* 线条高度 / Line height */
-  background: #4CAF50; /* 线条颜色 / Line color */
-  transition: 0.3s; /* 动画时间 / Transition duration */
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: #4CAF50;
+  transition: 0.3s;
 }
 
-/* 鼠标悬停时展开下划线 / Expand underline on hover */
-.navbar a:hover::after {
+.navbar-right a:hover::after {
   width: 100%;
 }
 
-/* 当前页面高亮 / Active Page Highlight */
-.navbar a.active {
-  color: #4CAF50;
-}
-
-/* ================= 主页面 / Main Section ================= */
-.hero {
-  padding: 60px 20px; /* 上下左右间距 / Padding */
-}
-
-/* ================= 按钮样式 / Button Styles ================= */
-.start-btn {
-  margin-top: 20px;
-  padding: 12px 24px;
-  background: #4CAF50; /* 背景色 / Background color */
+/* 多语言按钮 */
+.lang-btn {
+  margin-left: 15px;
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #4CAF50;
   border: none;
   color: white;
-  cursor: pointer; /* 鼠标手型 / Pointer cursor */
-  font-size: 16px;
-
-  transition: all 0.3s ease; /* 动画过渡 / Smooth transition */
+  border-radius: 4px;
+  transition: all 0.3s ease;
 }
 
-/* 鼠标悬停按钮 / Button Hover */
-.start-btn:hover {
+.lang-btn:hover {
   background: #45a049;
-  transform: scale(1.1); /* 放大 / Scale up */
-}
-
-/* 点击按钮效果 / Button Active (Click Effect) */
-.start-btn:active {
-  transform: scale(0.95); /* 缩小 / Press effect */
-}
-
-/* ================= 功能卡片 / Feature Cards ================= */
-.features {
-  display: flex; /* 横向排列 / Horizontal layout */
-  justify-content: center; /* 居中 / Center items */
-  margin-top: 40px;
-}
-
-.card {
-  border: 1px solid #ddd; /* 边框 / Border */
-  padding: 20px;
-  margin: 10px;
-  width: 200px;
+  transform: scale(1.1);
 }
